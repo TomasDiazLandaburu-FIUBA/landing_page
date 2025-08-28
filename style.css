@@ -1,0 +1,612 @@
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 75px; /* ajusta según la altura de tu header */
+}
+
+
+
+
+#header {
+    position: fixed; /* Para que el header permanezca siempre visible */
+    top: 0; /* Para que no haya ningun espacio arriba del header */
+    left: 0; /* Lo mismo que top, pero para la izquierda */
+    z-index: 100; /* Controlando el orden de apilamiento de los elementos, de manera que le header siempre esté por encima de todos los elementos de la página */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: white;
+    
+}
+
+
+.logo-header{
+    width: 200px;
+    height: auto;
+} 
+
+.bandera-header{
+    height: auto;
+    width: 80px;
+    border-radius: 15px;
+}
+.header-nav {
+    margin-right: 40px;
+}
+
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Separación entre ítems */
+}
+
+.header-nav li {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav li a{
+    font-size: 20px;
+}
+
+.nav-buttons {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 2px;
+    height: 40px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: grey;
+}
+
+
+.img-section {
+    width: 100%;
+    height: 100vh; 
+    background-image: url("media/intro.webp");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;  
+    padding-left: 50px;    
+}
+
+.img-overlay {
+    color: white;
+    max-width: 600px;
+}
+
+.img-overlay h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+
+.img-overlay p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.img-overlay button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.img-overlay button:hover {
+    background: rgba(216, 216, 216, 0.8);
+    transition: 0.2s;
+}
+
+
+/* QUIENES SOMOS */
+.QuienesSomos-section, .QueHacemos-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    padding: 30px 0 10px 0;  /* arriba 30px, abajo 10px */
+    text-align: center;    
+
+}
+
+.QuienesSomos-section{
+    background: url("media/ondas.png") no-repeat center center;
+    background-size: cover;   /* cubre el 100% */
+    background-attachment: fixed; /* efecto parallax (opcional) */
+    width: 100%;
+}
+
+.QuienesSomos-section-title{
+    font-size: 60px;
+    color: black;
+    font-weight: 700;
+    margin: 0;
+}
+
+.QuienesSomos-envolve, .QueHacemos-envolve{
+    display: flex;
+    align-items: center;                 
+    width: 80%;
+}
+
+.QuienesSomos-section-subtitle {
+    font-size: 18px;   /* más chico que el h2 */
+    font-weight: 400;  /* más liviano */
+    margin: 0;         /* eliminamos espacios extras */
+    text-align: center;
+    letter-spacing: 2px; /* opcional, estilo elegante */
+    font-weight: 200;
+
+}
+
+.QuienesSomos-section-title {
+    font-size: 50px;   /* más grande y destacado */
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.QuienesSomos-img-container{
+    width: 100%;
+
+}
+
+.QuienesSomos-img-container img{
+    height: auto;
+    width: 700px;
+
+}
+
+.QuienesSomos-text{
+    width: 100%;
+    
+}
+
+.QuienesSomos-text p{
+    color: grey;
+    line-height: 28px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.QuienesSomos-text button {
+    margin-top: 20px;
+
+    background-color: #0056b3;
+    border: none;
+    font-size: 16px;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    align-items: center;
+}
+
+.QuienesSomos-text button:hover {
+    background-color: #003f80;
+}
+
+.QuienesSomos-text button span {
+    font-size: 20px;
+    line-height: 1;       
+    vertical-align: middle; 
+    position: relative;
+    top: 3px;           
+    left: 5px;   
+    color: white;
+}
+
+/* QUE HACEMOS */
+
+.QueHacemos-section{
+    background: url("media/Que_hacemos/ondas.png") no-repeat center center;
+    background-size: cover;   /* cubre el 100% */
+    background-attachment: fixed; /* efecto parallax (opcional) */
+    width: 100%;
+}
+
+.QuienesSomos-envolve, .QueHacemos-envolve{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.QueHacemos-card{
+    background-color: rgb(255, 255, 255);
+    min-height: 50vh;
+    width: 400px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* sombra hacia abajo */
+    transition: transform 0.5s ease;
+    margin: 50px 0 50px 0;
+}
+
+.QueHacemos-card:hover{
+    transform: scale(1.05); /* se agranda un 10% */
+    cursor: pointer;
+}
+
+.QueHacemos-card img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center bottom;
+    margin-bottom: 20px;
+}
+
+.QueHacemos-text{
+    text-align: center;
+    flex: 1;                   /* ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;    /* apila títulos y párrafos */
+    justify-content: center;   /* centra verticalmente */
+    align-items: center;       /* centra horizontalmente */
+    text-align: center;
+    padding: 20px; 
+}
+
+.QueHacemos-h4, .QueHacemos-h5 {
+    margin: 10px 0; /* ajusta el espacio arriba y abajo */
+    padding: 5px;   /* opcional: relleno interno */
+}
+.QueHacemos-h4{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.QueHacemos-h5{
+    font-size: 25px;
+}
+
+/* NUESTRA EXPERIENCIA */
+.NuestraExperiencia-seccion{
+    display: flex;
+    justify-content: center;
+}
+
+.NuestraExperiencia-envolve{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+
+.NuestraExperiencia-title h1{
+    font-size: 50px;   /* más grande y destacado */
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.NuestraExperiencia-text{
+    margin: 0 0 50px 0;
+}
+
+.NuestraExperiencia-text p{
+    color: grey;
+    line-height: 28px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.NuestraExperiencia-images{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ESTEREO */
+.stereo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* centrar horizontal */
+  align-items: center;         /* centrar vertical */
+}
+
+.stereo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;         /* ajustá el ancho */
+  overflow: hidden;
+}
+
+.half {
+  width: 100%;
+  height: 250px;        /* alto fijo para la mitad (ajustalo al tamaño real) */
+  overflow: hidden;
+  position: relative;
+}
+
+.half img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Mostrar solo la parte superior */
+.half.top img {
+  top: 0;
+}
+
+/* Mostrar solo la parte inferior */
+.bottom img {
+    top: -250px;   /* desplaza la imagen hacia arriba la mitad de su altura */
+}
+
+.stereo-text{
+    font-size: 20px;
+}
+
+/* GRID */
+.grid-section {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+  /* ===== GRID ===== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px; /* MÁS ESPACIO ENTRE ITEMS */
+    max-width: 1200px;
+}
+
+/* ===== CARD ===== */
+/* ===== CARD GENERAL ===== */
+.grid-item {
+    background: #fff;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.4s ease;
+    animation: fadeUp 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(50px);
+    cursor: pointer;
+}
+
+/* Animación de entrada */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay por ítem */
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(5) { animation-delay: 0.4s; }
+.grid-item:nth-child(7) { animation-delay: 0.5s; }
+.grid-item:nth-child(8) { animation-delay: 0.6s; }
+.grid-item:nth-child(9) { animation-delay: 0.7s; }
+
+/* Hover profesional solo para tarjetas sin logo */
+.no-logo:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== ICONOS ===== */
+.material-icons {
+    font-size: 50px;
+    color: #0d6efd;
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'opsz' 48;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease; /* Transición corregida */
+}
+
+/* Hover SOLO para íconos */
+.grid-item:hover .material-icons {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* ===== TEXTO ===== */
+.span-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 8px;
+}
+
+.grid-item small {
+    font-size: 1rem;
+    color: #555;
+}
+
+.grid-item img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 20px;
+    transition: transform 0.35s ease;
+}
+
+/* Logo central sin animación */
+.logo {
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+    animation: none;
+    opacity: 1;
+    transform: none;
+    padding: 0;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+
+.img-section-2 {
+    width: 100%;
+    height: 400px; /* ajustá según quieras */
+    background-image: url("media/carpa.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    text-align: center;
+}
+
+.img-overlay-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    max-width: 700px;
+}
+
+.img-overlay-2 p {
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    line-height: 1.5;
+}
+
+.img-overlay-2 strong {
+    font-weight: bold;
+}
+
+.img-overlay-2 button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.img-overlay-2 button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== FOOTER ===== */
+
+.derechos-reservados {
+    background-color: #000;       
+    display: flex;
+    justify-content: space-between; /* uno a la izquierda y otro a la derecha */
+    align-items: center;           
+    padding: 10px 0;              /* solo arriba/abajo */
+    font-size: 14px;
+    border-top: 1px solid #333;   
+    width: 100%;
+}
+
+.derechos-reservados p {
+    color: #bbb;                  
+    margin: 0;
+}
+
+.derechos-reservados p:first-child {
+    color: #fff;                  
+    font-weight: 500;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.NuestrasMarcas-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.NuestrasMarcas-title h2{
+    font-weight: normal;
+    border-bottom: 2px solid #ccc;
+    display: inline-block; /* para que la línea no ocupe todo el ancho */
+}
+
+.NuestrasMarcas-imagenes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    width: 80%;
+    margin: 100px auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.NuestrasMarcas-imagenes img {
+    max-width: 200px;
+    max-height: auto;
+    object-fit: contain;
+    filter: grayscale(100%); /* opcional: blanco y negro */
+    transition: 0.3s;
+}
+
+.NuestrasMarcas-imagenes img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+
