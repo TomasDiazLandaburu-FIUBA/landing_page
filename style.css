@@ -13,9 +13,6 @@ section {
   scroll-margin-top: 75px; /* ajusta según la altura de tu header */
 }
 
-
-
-
 #header {
     position: fixed; /* Para que el header permanezca siempre visible */
     top: 0; /* Para que no haya ningun espacio arriba del header */
@@ -79,7 +76,12 @@ section {
     color: grey;
 }
 
+/* SIDE BAR */
 
+
+
+
+/* IMG INTRO */
 .img-section {
     width: 100%;
     height: 100vh; 
@@ -607,6 +609,42 @@ section {
 .NuestrasMarcas-imagenes img:hover {
     filter: grayscale(0);
     transform: scale(1.05);
+}
+
+
+
+
+
+
+.NuestraExperiencia-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.NuestraExperiencia-track {
+  display: flex;
+  width: calc(200px * 5 * 2); /* ancho = img*5 * 2 grupos */
+  animation: scroll 20s linear infinite;
+}
+
+.NuestraExperiencia-track .grupo {
+  display: flex;
+}
+
+.NuestraExperiencia-track img {
+  width: 200px;   /* ajusta al tamaño real */
+  height: auto;
+  margin: 0 15px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 
