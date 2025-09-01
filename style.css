@@ -20,7 +20,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.3rem 5%;
+    padding: 1.3rem 1.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,7 +59,7 @@ section {
     font-size: 1.4rem;
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 5rem;
     
 }
