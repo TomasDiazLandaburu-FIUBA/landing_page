@@ -39,13 +39,6 @@ section {
     z-index: -1;
 }
 
-/* .logo{
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-} */
-
 .logo img{
     width: 12.5rem;
 }
@@ -62,7 +55,7 @@ section {
     font-weight: 600;
     margin-left: 5rem;
     
-}
+} 
 
 /* efecto hover */
 .navbar a:not(:has(img)) {
@@ -98,7 +91,7 @@ section {
 
 .icons{
     position: absolute;
-    right: 5%;
+    right: 10%;
     font-size: 2.8rem;
     color: white;
     cursor: pointer;
@@ -691,6 +684,10 @@ section {
 
 @media (max-width: 900px){
 
+    .header{
+        padding: 1.3rem 10%;
+    }
+
     .icons{
         display: inline-flex;
     }
@@ -701,6 +698,10 @@ section {
 
     .icons #close-icon{
         display: none;
+    }
+
+    .logo img{
+        width: 10rem;
     }
 
     #check:checked~.icons #close-icon {
