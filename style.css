@@ -1,85 +1,109 @@
-body {
-    font-family: 'Inter', 'Poppins', sans-serif;    
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    /* font-family: 'Inter', 'Poppins', sans-serif;     */
     margin: 0;
     padding: 0;
-    width: 100%;
-}
-
-html {
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 section {
   scroll-margin-top: 75px; /* ajusta según la altura de tu header */
 }
 
-#header {
-    position: fixed; /* Para que el header permanezca siempre visible */
-    top: 0; /* Para que no haya ningun espacio arriba del header */
-    left: 0; /* Lo mismo que top, pero para la izquierda */
-    z-index: 100; /* Controlando el orden de apilamiento de los elementos, de manera que le header siempre esté por encima de todos los elementos de la página */
+/* HEADER */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+/* .logo{
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+} */
+
+.logo img{
+    width: 12.5rem;
+}
+
+.navbar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: white;
+}
+
+.navbar a{
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5rem;
     
 }
 
-
-.logo-header{
-    width: 200px;
-    height: auto;
-} 
-
-.bandera-header{
-    height: auto;
-    width: 80px;
-    border-radius: 15px;
-}
-.header-nav {
-    margin-right: 40px;
+/* efecto hover */
+.navbar a:not(:has(img)) {
+    position: relative;
+    overflow: hidden;
 }
 
-
-.header-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px; /* Separación entre ítems */
+.navbar a:not(:has(img))::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
 }
 
-.header-nav li {
-    display: flex;
-    align-items: center;
+.navbar a:not(:has(img)):hover::after {
+    width: 100%;
 }
 
-.header-nav li a{
-    font-size: 20px;
+.navbar a img{
+    width: 5rem;
+    border-radius: 0.6rem;
+    position: relative;
+    top: 5px;
 }
 
-.nav-buttons {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 2px;
-    height: 40px;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#check{
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
     cursor: pointer;
-    color: grey;
+    display: none;
 }
-
-/* SIDE BAR */
-
-
-
 
 /* IMG INTRO */
 .img-section {
@@ -647,4 +671,84 @@ section {
   }
 }
 
+@media (max-width: 1300px){
+    .logo img{
+        width: 13rem;
+    }
+    .navbar a img{
+        position: relative;
+        width: 4rem;
+    }
+    .navbar a{
+        font-size: 1.3rem;
+        margin-left: 2.6rem;
+    }
 
+    .header{
+        padding: 1.3rem 2%;
+    }
+}
+
+@media (max-width: 900px){
+
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: red;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+
+        flex-direction: column;
+        justify-content: flex-start; /* pega los elementos al inicio */
+    }
+
+    #check:checked~.navbar {
+        height: 25rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    .navbar a::after {
+        display: none;
+    }
+
+    .navbar a img{
+        display: none;
+    }
+
+    #check:checked~.navbar a{
+        transform: translateY(0);        
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+}
