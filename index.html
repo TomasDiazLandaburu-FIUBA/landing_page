@@ -274,6 +274,20 @@
             });
         });
         }
+
+        // Seleccionamos todos los enlaces dentro del menú
+        const navLinks = document.querySelectorAll('.navbar a');
+        const menuCheckbox = document.getElementById('check');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+            // Solo desmarcamos si el menú está abierto
+            if(menuCheckbox.checked){
+                menuCheckbox.checked = false;
+            }
+            });
+        });
+
     </script>
 </body>
 </html>
