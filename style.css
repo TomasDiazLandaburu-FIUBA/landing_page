@@ -149,14 +149,14 @@ section {
     align-items: center;   
     padding: 30px 0 10px 0;  /* arriba 30px, abajo 10px */
     text-align: center;    
-
+    border: solid 2px red;
 }
 
 .QuienesSomos-section{
     background: url("media/ondas.png") no-repeat center center;
     background-size: cover;   /* cubre el 100% */
     background-attachment: fixed; /* efecto parallax (opcional) */
-    width: 100%;
+    border: solid 2px yellow;
 }
 
 .QuienesSomos-section-title{
@@ -164,12 +164,14 @@ section {
     color: black;
     font-weight: 700;
     margin: 0;
+    border: solid 2px red;
 }
 
 .QuienesSomos-envolve, .QueHacemos-envolve{
     display: flex;
     align-items: center;                 
     width: 80%;
+    border: solid 5px black;
 }
 
 .QuienesSomos-section-subtitle {
@@ -179,6 +181,8 @@ section {
     text-align: center;
     letter-spacing: 2px; /* opcional, estilo elegante */
     font-weight: 200;
+    border: solid 2px red;
+
 
 }
 
@@ -186,22 +190,25 @@ section {
     font-size: 50px;   /* más grande y destacado */
     font-weight: 700;
     text-align: center;
+    border: solid 2px red;
+
 
 }
 
 .QuienesSomos-img-container{
     width: 100%;
+    border: solid 2px red;
 
 }
 
 .QuienesSomos-img-container img{
     height: auto;
-    width: 700px;
-
+    width: 45rem;
 }
 
 .QuienesSomos-text{
     width: 100%;
+    border: dashed 4px pink;
     
 }
 
@@ -210,6 +217,8 @@ section {
     line-height: 28px;
     width: 60%;
     margin: 0 auto;
+    border: solid 2px red;
+
 }
 
 .QuienesSomos-text button {
@@ -351,13 +360,13 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;         /* ajustá el ancho */
+  width: 30rem;         /* ajustá el ancho */
   overflow: hidden;
 }
 
 .half {
   width: 100%;
-  height: 250px;        /* alto fijo para la mitad (ajustalo al tamaño real) */
+  height: 15rem;        /* alto fijo para la mitad (ajustalo al tamaño real) */
   overflow: hidden;
   position: relative;
 }
@@ -379,7 +388,7 @@ section {
 
 /* Mostrar solo la parte inferior */
 .bottom img {
-    top: -250px;   /* desplaza la imagen hacia arriba la mitad de su altura */
+    top: -15rem;   /* desplaza la imagen hacia arriba la mitad de su altura */
 }
 
 .stereo-text{
@@ -680,6 +689,15 @@ section {
     .header{
         padding: 1.3rem 2%;
     }
+
+    /* QUIENES SOMOS */
+    .QuienesSomos-text p{
+        width: 100%;
+    }
+
+    .QuienesSomos-img-container img{
+    width: 30rem;
+}
 }
 
 @media (max-width: 900px){
@@ -751,5 +769,71 @@ section {
         transform: translateY(0);        
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
+    }
+
+    /* QUIENES SOMOS */
+    .QuienesSomos-envolve{
+        flex-direction: column;
+    }
+    
+    .QuienesSomos-img-container img{
+        width: 95%;
+    }
+
+    .QuienesSomos-text p{
+        width: 99%;
+    }
+
+    /* NUESTRA EXPERIENCIA */
+    .NuestraExperiencia-title h1{
+        font-size: 2rem;
+    }
+
+    .NuestraExperiencia-text{
+        border: 5px dashed ;
+    }
+
+    .NuestraExperiencia-text p{
+        border: 5px dashed;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    /* CARRUSEL */
+    .grupo img{
+        width: 8rem;
+    }
+
+    /* FOTO ESTEREO */
+    .stereo {
+        width: 20rem;         /* ajustá el ancho */
+    }
+
+    .half {
+        height: 10rem;        /* alto fijo para la mitad (ajustalo al tamaño real) */
+    }
+
+    .bottom img {
+        top: -10rem;   /* desplaza la imagen hacia arriba la mitad de su altura */
+    }
+
+    .stereo-text{
+        border: dashed 5px;
+        width: 99%;
+        text-align: center;
+    }
+
+    .stereo-text p{
+        font-weight: 200;
+    }
+
+    /* QUE HACEMOS */
+    .QueHacemos-envolve{
+        flex-direction: column;
+    }
+
+    .QueHacemos-card{
+        width: 90%;
+        margin: 1.5rem 0;
     }
 }
